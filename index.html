@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YuvaGaneshYouth</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="hero">
+        <video autoplay muted loop id="backgroundVideo">
+            <source src="images/ganesha.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <div class="header-content">
+                <img src="images/ganeshalogo.png" alt="Logo" class="logo">
+                <h1>YuvaGaneshYouth</h1>
+            </div>
+            <h2>Welcome to YuvaGaneshYouth!</h2>
+            <h3>"Only YuvaGaneshYouth members are allowed <br/>  to upload videos and photos."</h3>
+            
+            <div class="upload-buttons">
+                <button id="uploadVideoBtn">Upload Video</button>
+                <button id="uploadPhotoBtn">Upload Photo</button>
+            </div>
+
+            <!-- Video Progress Bar -->
+            <div id="videoUploadProgress" class="progress-container">
+                <div id="videoProgressBar" class="progress-bar"></div>
+                <span id="videoUploadStatus"></span>
+            </div>
+
+            <!-- Photo Progress Bar -->
+            <div id="photoUploadProgress" class="progress-container">
+                <div id="photoProgressBar" class="progress-bar"></div>
+                <span id="photoUploadStatus"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'Videos')" id="videosTab">Videos</button>
+            <button class="tablinks" onclick="openTab(event, 'Photos')">Photos</button>
+        </div>
+
+        <div id="Videos" class="tabcontent">
+            <h2>YuvaGaneshYouth Videos</h2>
+            <div id="videoGrid" class="file-grid videos"></div>
+        </div>
+
+        <div id="Photos" class="tabcontent">
+            <h2>YuvaGaneshYouth Photos</h2>
+            <div id="photoGrid" class="file-grid images"></div>
+        </div>
+    </div>
+
+    <!-- Password Dialog -->
+    <div id="passwordDialog" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Enter the password:</p>
+            <input type="password" id="passwordInput" placeholder="Enter password">
+            <button id="passwordSubmit">Submit</button>
+        </div>
+    </div>
+
+    <!-- Photo Modal -->
+    <div id="photoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalImage" src="" alt="Photo">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright © 2024 YuvaGaneshYouth | RAGHUVARAN REDDY</p>
+    </footer>
+
+ <!-- Firebase SDK and your script -->
+ <script type="module">
+    // Firebase configuration and initialization
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, getDocs } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js";
+    import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-storage.js";
+
+    // Your Firebase configuration object
+    const firebaseConfig = {
+    apiKey: "AIzaSyCe3jK1jpK0gzVhXWUnQb61nG47yoIT3-g",
+    authDomain: "yuvaganesh-youth.firebaseapp.com",
+    databaseURL: "https://yuvaganesh-youth-default-rtdb.firebaseio.com",
+    projectId: "yuvaganesh-youth",
+    storageBucket: "yuvaganesh-youth.appspot.com",
+    messagingSenderId: "217524328069",
+    appId: "1:217524328069:web:2ef02302ca5579a8cdbbec",
+    measurementId: "G-MEE96BCLZW"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const storage = getStorage(app);
+
+    // Additional Firebase-related code should be here
+</script>
+<script type="module" src="js/scripts.js"></script>
+
+</body>
+</html>

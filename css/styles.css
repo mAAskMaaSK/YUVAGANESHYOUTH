@@ -1,0 +1,379 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+
+
+.hero {
+    position: relative; /* Container for video and content */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide overflow from video */
+}
+
+#backgroundVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the entire hero section */
+    z-index: -1; /* Place video behind all content */
+}
+
+.hero-content {
+    position: absolute; /* Position content relative to the hero section */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width to center content horizontally */
+    height: 100%; /* Full height to center content vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    color: white;
+}
+
+.header-content {
+    position: absolute; /* Position header content at the top left */
+    top: 20px; /* Adjust spacing from the top */
+    left: 20px; /* Adjust spacing from the left */
+    display: flex;
+    align-items: center; /* Align logo and heading vertically */
+}
+
+.logo {
+    height: 80px;
+    width: auto;
+    margin-right: 20px; /* Space between logo and heading */
+}
+
+h1 {
+    font-family: "Gill Sans", sans-serif;
+    margin: 0;
+    font-size: 2.5em; /* Adjust font size as needed */
+    color: white;
+}
+
+.upload-buttons {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    margin-top: 20px;
+    width: 100%; /* Ensure buttons are centered within the full width */
+    position: relative; /* Allow positioning of elements inside if needed */
+    top: 30px; /* Adjust top positioning if needed */
+}
+
+.upload-buttons button {
+    background-color: black;
+    color: orangered;
+    padding: 20px 30px; /* Add more padding for a larger button */
+    margin: 0 15px; /* Adjust margin for spacing between buttons */
+    border: none;
+    border-radius: 25px; /* Make buttons more rounded */
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+.upload-buttons button:hover {
+    background-color: white;
+    color: black; /* Ensure text color changes for better contrast */
+}
+
+
+
+.content {
+    margin: 0; /* Remove margin from content */
+    padding: 0; /* Remove padding from content */
+}
+
+/* Center the tab buttons */
+.tab {
+    display: flex;
+    justify-content: left;
+    overflow: hidden;
+    background-color: white; /* Semi-transparent background for tabs */
+    border-radius: 10px; /* Optional: rounded corners for the tab container */
+    margin: 0; /* Remove margin above and below the tabs */
+    padding: 0; /* Remove padding around the tabs */
+}
+
+.tab button {
+    background-color: #f0f0f0; /* Match background color for inactive tabs */
+    border: none; /* Remove the border for tabs */
+    outline: none;
+    padding: 16px 24px; /* Increase padding for larger tabs */
+    cursor: pointer;
+    color: orangered; /* Red color for inactive tabs */
+    margin: 0 10px; /* Remove margin between tabs */
+    font-size: 18px; /* Increase font size for larger tabs */
+    border-radius: 50px; /* Rounded border */
+}
+
+.tab button:hover {
+    background-color: #ddd; /* Light gray hover color for tabs */
+}
+
+.tab button.active {
+    background-color: black; /* Black color for active tab */
+    color: #fff; /* White text for active tab */
+}
+
+.tabcontent {
+    display: none;
+    padding: 20px;
+    background-color: white; /* Semi-transparent background for tab content */
+    border-radius: 10px; /* Optional: rounded corners for tab content */
+    margin: 0; /* Remove margin around tab content */
+}
+
+.file-grid {
+    display: grid;
+    gap: 15px;
+    background-color: #f0f0f0; /* Match background color for grid */
+    padding: 20px; /* Add padding to ensure grid items are not directly on the edge */
+}
+
+/* Grid layout for images */
+.file-grid.images {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Ensure square images with auto-fill */
+}
+
+/* Grid layout for videos */
+.file-grid.videos {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Flexible columns for videos */
+}
+
+.file-grid img {
+    width: 100%;
+    height: 100%; /* Ensure images are square */
+    object-fit: cover; /* Ensure images cover the square container */
+    border-radius: 10px;
+}
+
+.file-grid video {
+    border-radius: 10px;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000; /* Background color in case video fails to load */
+}
+
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video covers the container */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 300px; /* Fixed width for modal content */
+}
+
+.modal-content input {
+    padding: 10px;
+    margin: 15px 0;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    background-color: #42a5f5;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #1e88e5;
+}
+
+.close {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.progress-container {
+    width: 50%;
+    background-color: black;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 40px;
+    position: relative; /* Ensure correct positioning */
+    display: none; /* Hidden by default */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* 3D effect */
+}
+
+.progress-bar {
+    height: 15px; /* Adjust height */
+    width: 0;
+    background-color: orangered;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    line-height: 15px; /* Align text */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Inner shadow */
+    transition: width 0.4s ease-in-out; /* Smooth transition */
+}
+
+
+
+
+
+/* Keyframes for pulse animation */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+    50% {
+        box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    100% {
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+}
+
+/* Animation effect */
+.progress-bar {
+    animation: pulse 2s infinite; /* Pulsing effect */
+}
+
+.hero {
+    margin-bottom: 50px; /* Adjust if needed to accommodate progress bar */
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal img {
+    width: 100%;
+    height: auto;
+}
+
+/* Style for Password Submit Button */
+#passwordSubmit {
+    background-color: #000; /* Black background color */
+    color: #fff; /* White text color */
+    padding: 12px 24px; /* Padding for button size */
+    border: none; /* Remove default border */
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effect */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow for 3D effect */
+}
+
+#passwordSubmit:hover {
+    background-color: #333; /* Darker shade of black on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+#passwordSubmit:active {
+    background-color: #222; /* Even darker shade when pressed */
+}
+
+/* Style for Password Input Field */
+#passwordInput {
+    width: 100%; /* Full width of the container */
+    padding: 12px; /* Padding inside the input field */
+    border: 2px solid #ccc; /* Light gray border */
+    border-radius: 25px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    color: #333; /* Text color */
+    background-color: #f9f9f9; /* Light gray background */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for border and shadow effects */
+}
+
+#passwordInput:focus {
+    border-color: #000; /* Change border color on focus */
+    background-color: #fff; /* White background on focus */
+    box-shadow: 0 0 5px rgba(0,0,0,0.2); /* Shadow effect on focus */
+    outline: none; /* Remove default focus outline */
+}
+footer {
+    background-color: #333; /* Background color */
+    color: #fff; /* Text color */
+    text-align: center; /* Center align the text */
+    padding: 1px 0; /* Padding on top and bottom */
+    position: fixed; /* Fixes the footer at the bottom */
+    bottom: 0; /* Aligns it to the bottom */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Includes padding and border in element's total width and height */
+}
+h2 {
+    font-family: cursive;
+    font-family: sans-serif;
+    color: orangered;
+    
+}
+h3 {
+    font-family: serif;
+    color: white;
+    text-align: center;
+}
