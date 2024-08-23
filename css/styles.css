@@ -99,7 +99,7 @@ h1 {
 /* Center the tab buttons */
 .tab {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     overflow: hidden;
     background-color: white; /* Semi-transparent background for tabs */
     border-radius: 10px; /* Optional: rounded corners for the tab container */
