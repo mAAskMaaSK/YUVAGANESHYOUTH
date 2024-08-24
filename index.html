@@ -25,13 +25,13 @@
                 <button id="uploadPhotoBtn">Upload Photo</button>
             </div>
 
-            <!-- Video Progress Bar -->
+          
             <div id="videoUploadProgress" class="progress-container">
                 <div id="videoProgressBar" class="progress-bar"></div>
                 <span id="videoUploadStatus"></span>
             </div>
 
-            <!-- Photo Progress Bar -->
+           
             <div id="photoUploadProgress" class="progress-container">
                 <div id="photoProgressBar" class="progress-bar"></div>
                 <span id="photoUploadStatus"></span>
@@ -56,7 +56,7 @@
         </div>
     </div>
 
-    <!-- Password Dialog -->
+    
     <div id="passwordDialog" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -66,7 +66,7 @@
         </div>
     </div>
 
-    <!-- Photo Modal -->
+    
     <div id="photoModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -74,19 +74,19 @@
         </div>
     </div>
 
-    <!-- Footer -->
+   
     <footer>
         <p>Copyright © 2024 YuvaGaneshYouth | RAGHUVARAN REDDY</p>
     </footer>
 
- <!-- Firebase SDK and your script -->
+ 
  <script type="module">
-    // Firebase configuration and initialization
+   
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
     import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, getDocs } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js";
     import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-storage.js";
 
-    // Your Firebase configuration object
+    
     const firebaseConfig = {
     apiKey: "AIzaSyCe3jK1jpK0gzVhXWUnQb61nG47yoIT3-g",
     authDomain: "yuvaganesh-youth.firebaseapp.com",
@@ -102,7 +102,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const storage = getStorage(app);
 
-    // Additional Firebase-related code should be here
+    
 </script>
 <script type="module" src="js/scripts.js"></script>
 
