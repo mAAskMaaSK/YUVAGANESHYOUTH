@@ -5,16 +5,10 @@ body {
     padding: 0;
 }
 
-
-
-
-
-
-
 .hero {
-    position: relative; /* Container for video and content */
-    height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Hide overflow from video */
+    position: relative; 
+    height: 100vh; 
+    overflow: hidden; 
 }
 
 #backgroundVideo {
@@ -23,140 +17,140 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure the video covers the entire hero section */
-    z-index: -1; /* Place video behind all content */
+    object-fit: cover; 
+    z-index: -1; 
 }
 
 .hero-content {
-    position: absolute; /* Position content relative to the hero section */
+    position: absolute; 
     top: 0;
     left: 0;
-    width: 100%; /* Full width to center content horizontally */
-    height: 100%; /* Full height to center content vertically */
+    width: 100%; 
+    height: 100%; 
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content horizontally */
-    justify-content: center; /* Center content vertically */
+    align-items: center; 
+    justify-content: center; 
     color: white;
 }
 
 .header-content {
-    position: absolute; /* Keep it absolute to place it relative to its nearest positioned ancestor */
-    top: 20px; /* Adjust spacing from the top */
-    left: 50%; /* Position horizontally in the center */
-    transform: translateX(-50%); /* Offset the element by 50% of its width */
+    position: absolute; 
+    top: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
     display: flex;
-    align-items: center; /* Align logo and heading vertically */
-    z-index: 1; /* Ensure it stays above other elements if needed */
+    align-items: center; 
+    z-index: 1; 
 }
 
 .logo {
     height: 80px;
     width: auto;
-    margin-right: 20px; /* Space between logo and heading */
+    margin-right: 20px; 
 }
 
 h1 {
     font-family: "Gill Sans", sans-serif;
     margin: 0;
-    font-size: 2.5em; /* Adjust font size as needed */
+    font-size: 2.5em; 
     color: white;
 }
 
 .upload-buttons {
     display: flex;
-    justify-content: center; /* Center the buttons horizontally */
+    justify-content: center; 
     margin-top: 20px;
-    width: 100%; /* Ensure buttons are centered within the full width */
-    position: relative; /* Allow positioning of elements inside if needed */
-    top: 30px; /* Adjust top positioning if needed */
+    width: 100%; 
+    position: relative; 
+    top: 30px; 
 }
 
 .upload-buttons button {
     background-color: black;
     color: orangered;
-    padding: 20px 30px; /* Add more padding for a larger button */
-    margin: 0 15px; /* Adjust margin for spacing between buttons */
+    padding: 20px 30px; 
+    margin: 0 15px; 
     border: none;
-    border-radius: 25px; /* Make buttons more rounded */
+    border-radius: 25px; 
     cursor: pointer;
     font-size: 15px;
-    transition: background-color 0.3s ease; /* Smooth transition effect */
+    transition: background-color 0.3s ease; 
 }
 
 .upload-buttons button:hover {
     background-color: white;
-    color: black; /* Ensure text color changes for better contrast */
+    color: black; 
 }
 
 
 
 .content {
-    margin: 0; /* Remove margin from content */
-    padding: 0; /* Remove padding from content */
+    margin: 0; 
+    padding: 0; 
 }
 
-/* Center the tab buttons */
+
 .tab {
     display: flex;
     justify-content: center;
     overflow: hidden;
-    background-color: white; /* Semi-transparent background for tabs */
-    border-radius: 10px; /* Optional: rounded corners for the tab container */
-    margin: 0; /* Remove margin above and below the tabs */
-    padding: 0; /* Remove padding around the tabs */
+    background-color: white; 
+    border-radius: 10px; 
+    margin: 0;
+    padding: 0; 
 }
 
 .tab button {
-    background-color: #f0f0f0; /* Match background color for inactive tabs */
-    border: none; /* Remove the border for tabs */
+    background-color: #f0f0f0; 
+    border: none; 
     outline: none;
-    padding: 16px 24px; /* Increase padding for larger tabs */
+    padding: 16px 24px; 
     cursor: pointer;
-    color: orangered; /* Red color for inactive tabs */
-    margin: 0 10px; /* Remove margin between tabs */
-    font-size: 18px; /* Increase font size for larger tabs */
-    border-radius: 50px; /* Rounded border */
+    color: orangered; 
+    margin: 0 10px; 
+    font-size: 18px; 
+    border-radius: 50px; 
 }
 
 .tab button:hover {
-    background-color: #ddd; /* Light gray hover color for tabs */
+    background-color: #ddd; 
 }
 
 .tab button.active {
-    background-color: black; /* Black color for active tab */
-    color: #fff; /* White text for active tab */
+    background-color: black;
+    color: #fff;
 }
 
 .tabcontent {
     display: none;
     padding: 20px;
-    background-color: white; /* Semi-transparent background for tab content */
-    border-radius: 10px; /* Optional: rounded corners for tab content */
-    margin: 0; /* Remove margin around tab content */
+    background-color: white; 
+    border-radius: 10px; 
+    margin: 0; 
 }
 
 .file-grid {
     display: grid;
     gap: 15px;
-    background-color: #f0f0f0; /* Match background color for grid */
-    padding: 20px; /* Add padding to ensure grid items are not directly on the edge */
+    background-color: #f0f0f0; 
+    padding: 20px; 
 }
 
 /* Grid layout for images */
 .file-grid.images {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Ensure square images with auto-fill */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 
 /* Grid layout for videos */
 .file-grid.videos {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Flexible columns for videos */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
 }
 
 .file-grid img {
     width: 100%;
-    height: 100%; /* Ensure images are square */
-    object-fit: cover; /* Ensure images cover the square container */
+    height: 100%;
+    object-fit: cover; 
     border-radius: 10px;
 }
 
@@ -167,10 +161,10 @@ h1 {
 .video-wrapper {
     position: relative;
     width: 100%;
-    padding-top: 56.25%; /* 16:9 aspect ratio */
+    padding-top: 56.25%; 
     border-radius: 10px;
     overflow: hidden;
-    background: #000; /* Background color in case video fails to load */
+    background: #000; 
 }
 
 .video-wrapper video {
@@ -179,7 +173,7 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures video covers the container */
+    object-fit: cover; 
 }
 
 .modal {
@@ -199,14 +193,14 @@ h1 {
     padding: 20px;
     border-radius: 5px;
     text-align: center;
-    width: 300px; /* Fixed width for modal content */
+    width: 300px; 
 }
 
 .modal-content input {
     padding: 10px;
     margin: 15px 0;
     width: 100%;
-    box-sizing: border-box; /* Ensure padding is included in width */
+    box-sizing: border-box; 
 }
 
 .modal-content button {
@@ -233,28 +227,28 @@ h1 {
     border-radius: 10px;
     padding: 5px;
     margin-top: 40px;
-    position: relative; /* Ensure correct positioning */
-    display: none; /* Hidden by default */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* 3D effect */
+    position: relative; 
+    display: none; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
 }
 
 .progress-bar {
-    height: 15px; /* Adjust height */
+    height: 15px; 
     width: 0;
     background-color: orangered;
     border-radius: 10px;
     text-align: center;
     color: white;
-    line-height: 15px; /* Align text */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Inner shadow */
-    transition: width 0.4s ease-in-out; /* Smooth transition */
+    line-height: 15px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); 
+    transition: width 0.4s ease-in-out;
 }
 
 
 
 
 
-/* Keyframes for pulse animation */
+
 @keyframes pulse {
     0% {
         box-shadow: 0 2px 5px rgba(0,0,0,0.3);
@@ -267,16 +261,16 @@ h1 {
     }
 }
 
-/* Animation effect */
+
 .progress-bar {
-    animation: pulse 2s infinite; /* Pulsing effect */
+    animation: pulse 2s infinite; 
 }
 
 .hero {
-    margin-bottom: 50px; /* Adjust if needed to accommodate progress bar */
+    margin-bottom: 50px; 
 }
 .modal {
-    display: none; /* Hidden by default */
+    display: none; 
     position: fixed;
     z-index: 1;
     left: 0;
@@ -317,56 +311,56 @@ h1 {
     height: auto;
 }
 
-/* Style for Password Submit Button */
+
 #passwordSubmit {
-    background-color: #000; /* Black background color */
-    color: #fff; /* White text color */
-    padding: 12px 24px; /* Padding for button size */
-    border: none; /* Remove default border */
-    border-radius: 25px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 16px; /* Font size */
-    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effect */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow for 3D effect */
+    background-color: #000; 
+    color: #fff; 
+    padding: 12px 24px; 
+    border: none; 
+    border-radius: 25px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    transition: background-color 0.3s, transform 0.2s; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
 }
 
 #passwordSubmit:hover {
-    background-color: #333; /* Darker shade of black on hover */
-    transform: scale(1.05); /* Slightly enlarge button on hover */
+    background-color: #333; 
+    transform: scale(1.05);
 }
 
 #passwordSubmit:active {
-    background-color: #222; /* Even darker shade when pressed */
+    background-color: #222; 
 }
 
-/* Style for Password Input Field */
+
 #passwordInput {
-    width: 100%; /* Full width of the container */
-    padding: 12px; /* Padding inside the input field */
-    border: 2px solid #ccc; /* Light gray border */
-    border-radius: 25px; /* Rounded corners */
-    font-size: 16px; /* Font size */
-    color: #333; /* Text color */
-    background-color: #f9f9f9; /* Light gray background */
-    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
-    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for border and shadow effects */
+    width: 100%; 
+    padding: 12px; /
+    border: 2px solid #ccc;
+    border-radius: 25px; 
+    font-size: 16px; 
+    color: #333; 
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 #passwordInput:focus {
-    border-color: #000; /* Change border color on focus */
-    background-color: #fff; /* White background on focus */
-    box-shadow: 0 0 5px rgba(0,0,0,0.2); /* Shadow effect on focus */
-    outline: none; /* Remove default focus outline */
+    border-color: #000; 
+    background-color: #fff; 
+    box-shadow: 0 0 5px rgba(0,0,0,0.2); 
+    outline: none; 
 }
 footer {
-    background-color: #333; /* Background color */
-    color: #fff; /* Text color */
-    text-align: center; /* Center align the text */
-    padding: 1px 0; /* Padding on top and bottom */
-    position: fixed; /* Fixes the footer at the bottom */
-    bottom: 0; /* Aligns it to the bottom */
-    width: 100%; /* Full width */
-    box-sizing: border-box; /* Includes padding and border in element's total width and height */
+    background-color: #333; 
+    color: #fff; 
+    text-align: center; 
+    padding: 1px 0; 
+    position: fixed; 
+    bottom: 0; 
+    width: 100%; 
+    box-sizing: border-box;
 }
 h2 {
     font-family: cursive;
